@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+	<% if @user.gadgets.any? %>
+      <h3>Gadgets (<%= @user.gadgets.count %>)</h3>
+      <ol class="gadgets">
+        <%= render @user.gadgets %>
+      </ol>
+    <% end %>
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
